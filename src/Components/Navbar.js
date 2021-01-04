@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,7 +63,7 @@ function Navbar() {
             </ThemeProvider>
 
             <Button color="inherit" className={classes.Button}>
-              SIGN IN
+              REGISTER
             </Button>
           </Box>
         </Toolbar>
