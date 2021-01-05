@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Button, TextField, Grid, Paper } from '@material-ui/core';
+import { Button, TextField, Grid, Paper, InputLabel } from '@material-ui/core';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import './SignInCard.css';
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#ffbf00',
+      main: '#eebf00',
       contrastText: '#fff',
     },
   },
@@ -20,7 +20,7 @@ function CreateProfile() {
   const [aboutMe, setAboutMe] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
-    let body = JSON.stringify({ companyname, linkedIn });
+    let body = JSON.stringify({ companyname, linkedIn, profession, aboutMe });
     console.log(body);
   };
 
@@ -43,13 +43,14 @@ function CreateProfile() {
                 <form onSubmit={handleSubmit}>
                   <Grid container direction="column" spacing={1}>
                     <Grid item>
+                      <InputLabel htmlFor="companyname">
+                        Company Name
+                      </InputLabel>
                       <TextField
                         type="text"
-                        placeholder="Company Name"
                         fullWidth
-                        name="companyname"
+                        id="companyname"
                         variant="outlined"
-                        required
                         autoFocus
                         margin="dense"
                         value={companyname}
@@ -57,39 +58,41 @@ function CreateProfile() {
                       />
                     </Grid>
                     <Grid item>
+                      <InputLabel htmlFor="linkedIn">
+                        LinkedIn Profile
+                      </InputLabel>
                       <TextField
                         type="text"
-                        placeholder="LinkedIn Profile"
                         fullWidth
-                        name="linkedIn"
+                        id="linkedIn"
                         variant="outlined"
-                        required
                         margin="dense"
                         value={linkedIn}
                         onChange={(e) => setlinkedIn(e.target.value)}
                       />
                     </Grid>
                     <Grid item>
+                      <InputLabel htmlFor="profession">Profession</InputLabel>
                       <TextField
                         type="text"
-                        placeholder="Profession"
                         fullWidth
-                        name="profession"
+                        id="profession"
                         variant="outlined"
-                        required
                         margin="dense"
                         value={profession}
                         onChange={(e) => setProfession(e.target.value)}
                       />
                     </Grid>
                     <Grid item>
+                      <InputLabel htmlFor="aboutme">
+                        About Me (Max. in 1000 words)
+                      </InputLabel>
                       <TextField
                         type="textholder"
-                        placeholder="About Me"
                         fullWidth
-                        name="about me"
+                        multiline
+                        id="about me"
                         variant="outlined"
-                        required
                         margin="dense"
                         value={aboutMe}
                         onChange={(e) => setAboutMe(e.target.value)}

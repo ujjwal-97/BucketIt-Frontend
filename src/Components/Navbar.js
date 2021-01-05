@@ -9,8 +9,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-//import { Link } from 'react-router-dom';
+import HomeIcon from '@material-ui/icons/Home';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#ffbf00',
+      main: '#eebf00',
       contrastText: '#fff',
     },
   },
@@ -37,14 +37,18 @@ function Navbar() {
     <>
       <AppBar position="static" className={classes.root}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
+          <ThemeProvider theme={theme}>
+            <Link to="/">
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="primary"
+                aria-label="menu"
+              >
+                <HomeIcon />
+              </IconButton>
+            </Link>
+          </ThemeProvider>
           <Box
             display="flex"
             flexGrow={1}
