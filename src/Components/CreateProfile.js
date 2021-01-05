@@ -1,6 +1,6 @@
 import Grid from '@material-ui/core/Grid';
-import './additionalCard.css';
-function AdditonalCard() {
+import './createProfile.css';
+function CreateProfile() {
   return (
     <Grid container direction="row" justify="center" alignItems="center">
       <div className="container">
@@ -34,4 +34,4 @@ function AdditonalCard() {
     </Grid>
   );
 }
-export default AdditonalCard;
+export default CreateProfile;

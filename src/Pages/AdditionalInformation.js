@@ -6,7 +6,7 @@ import {
   ThemeProvider,
 } from '@material-ui/core/styles';
 //import Button from '@material-ui/core/Button';
-import AdditionalCard from '../Components/AdditionalCard';
+import CreateProfile from '../Components/CreateProfile';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
@@ -41,7 +41,7 @@ function AdditonalInformation() {
           </strong>
         </Typography>
         <div className={classes.root}>
-          <AdditionalCard />
+          <CreateProfile />
         </div>
       </ThemeProvider>
     </>
