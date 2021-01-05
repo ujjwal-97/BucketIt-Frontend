@@ -11,5 +11,12 @@
   padding: 30px 50px;
 }
 .register {
+  margin: 10px;
   padding: 10px;
+}
+.link {
+  text-decoration: none;
+}
+.align-box {
+  width: 49.3%;
 }

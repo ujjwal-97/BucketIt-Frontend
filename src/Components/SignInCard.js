@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, TextField, Grid, Paper, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import './SignInCard.css';
 
 function SignInCard() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let body = JSON.stringify({ email, password });
+    console.log(body);
+  };
+
   return (
     <div>
       <Grid container justify="center" direction="row">
@@ -28,18 +36,20 @@ function SignInCard() {
                 </Typography>
               </Grid>
               <Grid item>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <Grid container direction="column" spacing={1}>
                     <Grid item>
                       <TextField
                         type="email"
                         placeholder="Email"
                         fullWidth
-                        name="username"
+                        name="email"
                         variant="outlined"
                         required
                         autoFocus
                         margin="dense"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </Grid>
                     <Grid item>
@@ -51,6 +61,8 @@ function SignInCard() {
                         variant="outlined"
                         required
                         margin="dense"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </Grid>
                     <Grid item>
@@ -69,7 +81,7 @@ function SignInCard() {
               <Grid item>
                 <Typography align="center" className="register">
                   New to Bucket It?&nbsp;
-                  <Link to="/" className="link">
+                  <Link to="/register" className="link">
                     <strong>Register</strong>
                   </Link>
                 </Typography>
