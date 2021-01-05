@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import theme from './theme';
 import Registerpage from './Pages/Registerpage';
 import SignIn from './Pages/SignIn';
+import CreateProfilePage from './Pages/CreateProfilePage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={SignIn} />
           <Route path="/register" exact component={Registerpage} />
+          <Route path="/createprofile" exact component={CreateProfilePage} />
         </Switch>
       </ThemeProvider>
     </BrowserRouter>

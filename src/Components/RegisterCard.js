@@ -64,7 +64,6 @@ function RegisterCard() {
                         name="email"
                         variant="outlined"
                         required
-                        autoFocus
                         margin="dense"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}

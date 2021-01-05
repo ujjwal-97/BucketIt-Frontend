@@ -23,7 +23,7 @@ const theme = createMuiTheme({
   },
 });
 
-function AdditonalInformation() {
+function CreateProfilePage() {
   const classes = useStyles();
 
   return (
@@ -47,4 +47,4 @@ function AdditonalInformation() {
     </>
   );
 }
-export default AdditonalInformation;
+export default CreateProfilePage;
