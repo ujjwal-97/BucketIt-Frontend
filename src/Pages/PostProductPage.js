@@ -22,7 +22,7 @@ const theme = createMuiTheme({
   },
 });
 
-function PostProductpage() {
+function PostProductPage() {
   const classes = useStyles();
 
   return (
@@ -35,4 +35,4 @@ function PostProductpage() {
     </>
   );
 }
-export default PostProductpage;
+export default PostProductPage;

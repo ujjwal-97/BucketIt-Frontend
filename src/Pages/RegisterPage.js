@@ -3,7 +3,7 @@ import Navbar from '../Components/Navbar';
 import RegisterCard from '../Components/RegisterCard';
 //import { Typography } from '@material-ui/core';
 
-function Registerpage() {
+function RegisterPage() {
   return (
     <>
       <Navbar signin={true} />
@@ -11,4 +11,4 @@ function Registerpage() {
     </>
   );
 }
-export default Registerpage;
+export default RegisterPage;

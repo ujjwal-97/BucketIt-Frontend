@@ -17,6 +17,7 @@ import Postproductbutton from './buttons/Postproductbutton';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    flexWrap: 'nowrap',
   },
   Button: {
     width: '200px',
