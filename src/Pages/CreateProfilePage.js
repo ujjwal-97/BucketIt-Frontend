@@ -28,7 +28,7 @@ function CreateProfilePage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar register={true} disablePost={true} />
       <ThemeProvider theme={theme}>
         <Typography
           variant="h4"

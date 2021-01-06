@@ -6,11 +6,13 @@ import {
 } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';
+import RegisterButton from './buttons/Registerbutton';
+import Signinbutton from './buttons/Signinbutton';
+import Postproductbutton from './buttons/Postproductbutton';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,7 +32,7 @@ const theme = createMuiTheme({
   },
 });
 
-function Navbar() {
+function Navbar({ signin = false, register = false, disablePost = false }) {
   const classes = useStyles();
 
   return (
@@ -56,19 +58,9 @@ function Navbar() {
             m={1}
             p={1}
           >
-            <ThemeProvider theme={theme}>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.Button}
-              >
-                POST PRODUCT
-              </Button>
-            </ThemeProvider>
-
-            <Button color="inherit" className={classes.Button}>
-              REGISTER
-            </Button>
+            <Postproductbutton disablePost={disablePost} />
+            {register && <RegisterButton />}
+            {signin && <Signinbutton />}
           </Box>
         </Toolbar>
       </AppBar>

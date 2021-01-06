@@ -5,6 +5,7 @@ import theme from './theme';
 import Registerpage from './Pages/Registerpage';
 import SignIn from './Pages/SignIn';
 import CreateProfilePage from './Pages/CreateProfilePage';
+import PostProductpage from './Pages/PostProductpage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" exact component={SignIn} />
           <Route path="/register" exact component={Registerpage} />
           <Route path="/createprofile" exact component={CreateProfilePage} />
+          <Route path="/postproduct" exact component={PostProductpage} />
         </Switch>
       </ThemeProvider>
     </BrowserRouter>

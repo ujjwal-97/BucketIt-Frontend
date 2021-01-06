@@ -6,7 +6,7 @@ import SignInCard from '../Components/SignInCard';
 function SignIn() {
   return (
     <>
-      <Navbar />
+      <Navbar register={true} />
       <SignInCard />
     </>
   );
