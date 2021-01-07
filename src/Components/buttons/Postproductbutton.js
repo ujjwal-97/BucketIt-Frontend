@@ -1,29 +1,14 @@
 import React from 'react';
-import {
-  makeStyles,
-  createMuiTheme,
-  ThemeProvider,
-} from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import theme from '../../theme';
 
 const useStyles = makeStyles((theme) => ({
   Button: {
     width: '200px',
   },
-  Link: {
-    color: '#fafafa',
-  },
 }));
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#eebf00',
-      contrastText: '#fff',
-    },
-  },
-});
 
 function Postproductbutton({ disablePost = false }) {
   const classes = useStyles();
@@ -36,7 +21,7 @@ function Postproductbutton({ disablePost = false }) {
       >
         <Button
           variant="contained"
-          color="primary"
+          color="secondary"
           className={classes.Button}
           disabled={disablePost}
         >

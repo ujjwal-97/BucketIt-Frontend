@@ -1,7 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import theme from '../../theme';
 
 const useStyles = makeStyles((theme) => ({
   Button: {
@@ -15,11 +16,13 @@ const useStyles = makeStyles((theme) => ({
 function Signinbutton() {
   const classes = useStyles();
   return (
-    <Link to="/" style={{ textDecoration: 'none' }} className={classes.Link}>
-      <Button color="inherit" className={classes.Button}>
-        SIGN IN
-      </Button>
-    </Link>
+    <ThemeProvider theme={theme}>
+      <Link to="/" style={{ textDecoration: 'none' }} className={classes.Link}>
+        <Button color="inherit" className={classes.Button}>
+          SIGN IN
+        </Button>
+      </Link>
+    </ThemeProvider>
   );
 }
 export default Signinbutton;

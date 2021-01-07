@@ -1,12 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import theme from '../../theme';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   Button: {
     width: '200px',
   },
@@ -18,15 +16,17 @@ const useStyles = makeStyles((theme) => ({
 function RegisterButton() {
   const classes = useStyles();
   return (
-    <Link
-      to="/register"
-      style={{ textDecoration: 'none' }}
-      className={classes.Link}
-    >
-      <Button color="inherit" className={classes.Button}>
-        REGISTER
-      </Button>
-    </Link>
+    <ThemeProvider theme={theme}>
+      <Link
+        to="/register"
+        style={{ textDecoration: 'none' }}
+        className={classes.Link}
+      >
+        <Button color="inherit" className={classes.Button}>
+          REGISTER
+        </Button>
+      </Link>
+    </ThemeProvider>
   );
 }
 export default RegisterButton;

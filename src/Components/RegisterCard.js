@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, TextField, Grid, Paper, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import './SignInCard.css';
+import '../Styles/SignInCard.css';
 
 function RegisterCard() {
   const [firstname, setFirstName] = useState('');
