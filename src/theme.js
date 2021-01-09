@@ -6,8 +6,22 @@ const theme = createMuiTheme({
       colorPrimary: { backgroundColor: '#1574F6' },
       colorSecondary: { backgroundColor: '#F9A23B' },
     },
+    MuiTypography: {
+      colorPrimary: { color: '#1574F6' },
+      colorSecondary: { color: '#F9A23B' },
+      colorTextPrimary: { color: '#788F9C' },
+      colorTextSecondary: { color: '#C0C7D2' },
+    },
     MuiLink: {
-      colorPrimary: '#1574F6',
+      colorPrimary: { color: '#1574F6' },
+      colorSecondary: { color: '#F9A23B' },
+    },
+    MuiPaper: {
+      outlined: {
+        backgroundColor: '#F0F6FF',
+        borderColor: '#1574F6',
+        color: '#788F9C',
+      },
     },
     MuiButton: {
       root: {

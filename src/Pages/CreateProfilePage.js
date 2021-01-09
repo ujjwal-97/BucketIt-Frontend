@@ -9,7 +9,7 @@ import theme from '../theme';
 function CreateProfilePage() {
   return (
     <>
-      <Navbar register={true} disablePost={true} />
+      <Navbar register={true} disablePost={false} />
       <ThemeProvider theme={theme}>
         <Box my={8}>
           <Typography variant="h4" align="center">

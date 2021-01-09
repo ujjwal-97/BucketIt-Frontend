@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Postproductbutton({ disablePost = false }) {
+function Postproductbutton({ disablePost = true }) {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>

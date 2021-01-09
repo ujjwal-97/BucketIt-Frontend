@@ -18,7 +18,9 @@
   padding: 20px 30px;
 }
 .fixed-notification {
+  max-width: 40vh;
   background-color: transparent;
+  display: flex;
   justify-content: center;
   border-width: 20px;
   border-color: blue;

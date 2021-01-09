@@ -47,7 +47,7 @@ function SignInCard() {
                 </Grid>
                 <Grid item>
                   <form onSubmit={handleSubmit}>
-                    <Grid container direction="column" spacing={0.75}>
+                    <Grid container direction="column" spacing={1}>
                       <Grid item>
                         <TextField
                           type="email"
@@ -93,7 +93,10 @@ function SignInCard() {
                 <Grid item>
                   <Typography align="center" className="register">
                     New to Bucket It?&nbsp;
-                    <Link to="/register" className="link">
+                    <Link
+                      to="/register"
+                      style={{ textDecoration: 'none', color: '#1574F6' }}
+                    >
                       <strong>Register</strong>
                     </Link>
                   </Typography>

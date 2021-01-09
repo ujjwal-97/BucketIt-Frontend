@@ -55,7 +55,7 @@ function RegisterCard() {
                 </Grid>
                 <Grid item>
                   <form onSubmit={handleSubmit}>
-                    <Grid container direction="column" spacing={0.75}>
+                    <Grid container direction="column" spacing={1}>
                       <Grid
                         container
                         direction="row"
@@ -154,7 +154,10 @@ function RegisterCard() {
                 <Grid item>
                   <Typography align="center" className="register" spacing={1}>
                     Already registered?&nbsp;
-                    <Link to="/" className="link">
+                    <Link
+                      style={{ textDecoration: 'none', color: '#1574F6' }}
+                      to="/"
+                    >
                       <strong>Sign In</strong>
                     </Link>
                   </Typography>
