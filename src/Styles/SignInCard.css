@@ -3,12 +3,26 @@
   min-height: 90vh;
   min-width: 50vh;
 }
+.product-review {
+  justify-content: left;
+  min-height: 90vh;
+  min-width: 50vh;
+  max-width: 50vh;
+}
 .button-block {
   width: 100%;
 }
+
 .login-background {
   justify-content: center;
-  padding: 30px 50px;
+  padding: 20px 30px;
+}
+.fixed-notification {
+  background-color: transparent;
+  justify-content: center;
+  border-width: 20px;
+  border-color: blue;
+  padding: 5px 10px;
 }
 .register {
   margin: 10px;

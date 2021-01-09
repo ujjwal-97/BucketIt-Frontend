@@ -6,6 +6,7 @@ import RegisterPage from './Pages/RegisterPage';
 import SignInPage from './Pages/SignInPage';
 import CreateProfilePage from './Pages/CreateProfilePage';
 import PostProductPage from './Pages/PostProductPage';
+import ReviewProductPage from './Pages/ReviewProductPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/register" exact component={RegisterPage} />
           <Route path="/createprofile" exact component={CreateProfilePage} />
           <Route path="/postproduct" exact component={PostProductPage} />
+          <Route path="/reviewproduct" exact component={ReviewProductPage} />
         </Switch>
       </ThemeProvider>
     </BrowserRouter>
