@@ -16,6 +16,7 @@ const theme = createMuiTheme({
       colorPrimary: { color: '#1574F6' },
       colorSecondary: { color: '#F9A23B' },
     },
+    MuiTextField: {},
     MuiPaper: {
       outlined: {
         backgroundColor: '#F0F6FF',
