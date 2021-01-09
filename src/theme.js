@@ -3,12 +3,11 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 const theme = createMuiTheme({
   overrides: {
     MuiAppBar: {
-      backgroundColor: '#1574F6',
-      borderColor: '#1574F6',
-      color: 'fff',
+      colorPrimary: { backgroundColor: '#1574F6' },
+      colorSecondary: { backgroundColor: '#F9A23B' },
     },
     MuiLink: {
-      color: '#1574F6',
+      colorPrimary: '#1574F6',
     },
     MuiButton: {
       root: {

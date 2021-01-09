@@ -6,10 +6,40 @@ import {
   Paper,
   InputLabel,
   Typography,
+  Box,
+  Select,
+  MenuItem,
 } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+import InputBase from '@material-ui/core/InputBase';
+//import MenuItem from '@material-ui/core/MenuItem';
+
+const BootstrapInput = withStyles((theme) => ({
+  root: {
+    'label + &': {
+      marginTop: theme.spacing(1),
+    },
+  },
+  input: {
+    borderRadius: 4,
+    position: 'relative',
+    backgroundColor: theme.palette.background.paper,
+    border: '1px solid #ced4da',
+    fontSize: 16,
+    padding: '10px 26px 10px 12px',
+    transition: theme.transitions.create(['border-color', 'box-shadow']),
+
+    '&:focus': {
+      borderRadius: 4,
+      borderColor: '#80bdff',
+      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
+    },
+  },
+}))(InputBase);
 
 function PostProductCard() {
   const [productName, setProductName] = useState('');
+  const [category, setCategory] = useState('');
   const [websiteLink, setWebsiteLink] = useState('');
   const [appLink, setAppLink] = useState('');
   const [oneLineSummary, setOneLineSummary] = useState('');
@@ -18,6 +48,7 @@ function PostProductCard() {
     e.preventDefault();
     let body = JSON.stringify({
       productName,
+      category,
       websiteLink,
       appLink,
       oneLineSummary,
@@ -36,9 +67,11 @@ function PostProductCard() {
             justify="center"
             className="login-form"
           >
-            <Typography variant="h5" align="center">
-              <strong>Post a Product</strong>
-            </Typography>
+            <Box my={4}>
+              <Typography variant="h5">
+                <strong>Post a Product</strong>
+              </Typography>
+            </Box>
             <Paper
               variant="elevation"
               elevation={5}
@@ -67,6 +100,25 @@ function PostProductCard() {
                         value={productName}
                         onChange={(e) => setProductName(e.target.value)}
                       />
+                    </Grid>
+                    <Grid item>
+                      <InputLabel id="catergory">Category</InputLabel>
+                      <Select
+                        labelId="catergory"
+                        id="catergory"
+                        value={category}
+                        fullWidth
+                        required
+                        onChange={(e) => setCategory(e.target.value)}
+                        input={<BootstrapInput />}
+                      >
+                        <MenuItem value={'EdTech'}>EdTech</MenuItem>
+                        <MenuItem value={'E-Commerce'}>E-Commerce</MenuItem>
+                        <MenuItem value={'Cabs'}>Cabs</MenuItem>
+                        <MenuItem value="Other">
+                          <em>Other</em>
+                        </MenuItem>
+                      </Select>
                     </Grid>
                     <Grid item>
                       <InputLabel htmlFor="websiteLink">
@@ -105,6 +157,8 @@ function PostProductCard() {
                         id="oneLineSummary"
                         variant="outlined"
                         margin="dense"
+                        rows={2}
+                        rowsMax={5}
                         value={oneLineSummary}
                         onChange={(e) => setOneLineSummary(e.target.value)}
                       />
@@ -117,9 +171,12 @@ function PostProductCard() {
                         type="textholder"
                         fullWidth
                         multiline
+                        required
                         id="description"
                         variant="outlined"
                         margin="dense"
+                        rows={8}
+                        rowsMax={14}
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                       />

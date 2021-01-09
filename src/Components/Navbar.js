@@ -27,7 +27,7 @@ function Navbar({ signin = false, register = false, disablePost = false }) {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <AppBar position="static" className={classes.MuiAppBar}>
+        <AppBar position="static">
           <Toolbar>
             <Link to="/">
               <IconButton
