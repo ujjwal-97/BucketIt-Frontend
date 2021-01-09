@@ -12,12 +12,13 @@ import '../Styles/SignInCard.css';
 
 function RegisterCard() {
   const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confpassword, setConfPassword] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
-    let body = JSON.stringify({ firstname, email, password });
+    let body = JSON.stringify({ firstname, lastname, email, password });
     console.log(body);
   };
 
@@ -46,26 +47,48 @@ function RegisterCard() {
                 className="login-background"
               >
                 <Grid item>
-                  <Typography align="center">
-                    <strong>Register for a free account</strong>
-                  </Typography>
+                  <Box my={1}>
+                    <Typography align="center">
+                      <strong>Register for a free account</strong>
+                    </Typography>
+                  </Box>
                 </Grid>
                 <Grid item>
                   <form onSubmit={handleSubmit}>
-                    <Grid container direction="column" spacing={1}>
-                      <Grid item>
-                        <TextField
-                          type="text"
-                          placeholder="FirstName"
-                          fullWidth
-                          name="firstname"
-                          variant="outlined"
-                          required
-                          autoFocus
-                          margin="dense"
-                          value={firstname}
-                          onChange={(e) => setFirstName(e.target.value)}
-                        />
+                    <Grid container direction="column" spacing={0.75}>
+                      <Grid
+                        container
+                        direction="row"
+                        spacing={1}
+                        justify="center"
+                      >
+                        <Grid item className="align-box">
+                          <TextField
+                            type="text"
+                            placeholder="First Name"
+                            fullWidth
+                            name="firstname"
+                            variant="outlined"
+                            required
+                            autoFocus
+                            margin="dense"
+                            value={firstname}
+                            onChange={(e) => setFirstName(e.target.value)}
+                          />
+                        </Grid>
+                        <Grid item className="align-box">
+                          <TextField
+                            type="text"
+                            placeholder="Last Name"
+                            fullWidth
+                            name="lastname"
+                            variant="outlined"
+                            required
+                            margin="dense"
+                            value={lastname}
+                            onChange={(e) => setLastName(e.target.value)}
+                          />
+                        </Grid>
                       </Grid>
                       <Grid item>
                         <TextField
@@ -114,20 +137,22 @@ function RegisterCard() {
                         </Grid>
                       </Grid>
                       <Grid item>
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          type="submit"
-                          className="button-block"
-                        >
-                          Register
-                        </Button>
+                        <Box my={1}>
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            type="submit"
+                            className="button-block"
+                          >
+                            Register
+                          </Button>
+                        </Box>
                       </Grid>
                     </Grid>
                   </form>
                 </Grid>
                 <Grid item>
-                  <Typography align="center" className="register">
+                  <Typography align="center" className="register" spacing={1}>
                     Already registered?&nbsp;
                     <Link to="/" className="link">
                       <strong>Sign In</strong>

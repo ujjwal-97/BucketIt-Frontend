@@ -47,7 +47,7 @@ function SignInCard() {
                 </Grid>
                 <Grid item>
                   <form onSubmit={handleSubmit}>
-                    <Grid container direction="column" spacing={1}>
+                    <Grid container direction="column" spacing={0.75}>
                       <Grid item>
                         <TextField
                           type="email"
@@ -76,14 +76,16 @@ function SignInCard() {
                         />
                       </Grid>
                       <Grid item>
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          type="submit"
-                          className="button-block"
-                        >
-                          Sign In
-                        </Button>
+                        <Box my={1}>
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            type="submit"
+                            className="button-block"
+                          >
+                            Sign In
+                          </Button>
+                        </Box>
                       </Grid>
                     </Grid>
                   </form>
