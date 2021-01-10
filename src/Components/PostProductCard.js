@@ -10,9 +10,21 @@ import {
   Select,
   MenuItem,
 } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
-//import MenuItem from '@material-ui/core/MenuItem';
+import {
+  ThemeProvider,
+  makeStyles,
+  withStyles,
+} from '@material-ui/core/styles';
+import theme from '../theme';
+import '../Styles/SignInCard.css';
+import { Link } from 'react-router-dom';
+
+const useStyles = makeStyles((theme) => ({
+  label: {
+    fontSize: 14,
+  },
+}));
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
@@ -21,7 +33,7 @@ const BootstrapInput = withStyles((theme) => ({
     },
   },
   input: {
-    borderRadius: 4,
+    borderRadius: 2,
     position: 'relative',
     backgroundColor: theme.palette.background.paper,
     border: '1px solid #ced4da',
@@ -38,167 +50,201 @@ const BootstrapInput = withStyles((theme) => ({
 }))(InputBase);
 
 function PostProductCard() {
-  const [productName, setProductName] = useState('');
-  const [category, setCategory] = useState('');
-  const [websiteLink, setWebsiteLink] = useState('');
-  const [appLink, setAppLink] = useState('');
-  const [oneLineSummary, setOneLineSummary] = useState('');
-  const [description, setDescription] = useState('');
+  const classes = useStyles();
+
+  const [values, setValues] = useState({
+    productName: '',
+    category: '',
+    websiteLink: '',
+    appLink: '',
+    oneLineSummary: '',
+    description: '',
+  });
+
+  const handleChange = (prop) => (e) => {
+    setValues({ ...values, [prop]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let body = JSON.stringify({
-      productName,
-      category,
-      websiteLink,
-      appLink,
-      oneLineSummary,
-      description,
+      values,
     });
     console.log(body);
   };
 
   return (
     <div>
-      <Grid container justify="center" direction="row">
-        <Grid item>
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            className="login-form"
-          >
-            <Box my={4}>
-              <Typography variant="h5">
-                <strong>Post a Product</strong>
-              </Typography>
-            </Box>
-            <Paper
-              variant="elevation"
-              elevation={5}
-              className="login-background"
+      <ThemeProvider theme={theme}>
+        <Grid container justify="center" direction="row">
+          <Grid item>
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              className="login-form"
             >
-              <Grid item>
-                <Typography align="center">
-                  <strong>Product Details</strong>
+              <Box my={4}>
+                <Typography variant="h5">
+                  <strong>Post a Product</strong>
                 </Typography>
-              </Grid>
-              <Grid item>
-                <form onSubmit={handleSubmit}>
-                  <Grid container direction="column" spacing={1}>
+              </Box>
+              <Paper
+                variant="elevation"
+                elevation={5}
+                className="login-background"
+              >
+                <Box mx={5}>
+                  <Box my={3}>
                     <Grid item>
-                      <InputLabel htmlFor="productName">
-                        Product Name
-                      </InputLabel>
-                      <TextField
-                        type="text"
-                        fullWidth
-                        required
-                        id="productName"
-                        variant="outlined"
-                        autoFocus
-                        margin="dense"
-                        value={productName}
-                        onChange={(e) => setProductName(e.target.value)}
-                      />
+                      <Typography align="center">
+                        <strong>Product Details</strong>
+                      </Typography>
                     </Grid>
-                    <Grid item>
-                      <InputLabel id="catergory">Category</InputLabel>
-                      <Select
-                        labelId="catergory"
-                        id="catergory"
-                        value={category}
-                        fullWidth
-                        required
-                        onChange={(e) => setCategory(e.target.value)}
-                        input={<BootstrapInput />}
-                      >
-                        <MenuItem value={'EdTech'}>EdTech</MenuItem>
-                        <MenuItem value={'E-Commerce'}>E-Commerce</MenuItem>
-                        <MenuItem value={'Cabs'}>Cabs</MenuItem>
-                        <MenuItem value="Other">
-                          <em>Other</em>
-                        </MenuItem>
-                      </Select>
-                    </Grid>
-                    <Grid item>
-                      <InputLabel htmlFor="websiteLink">
-                        Website Link
-                      </InputLabel>
-                      <TextField
-                        type="text"
-                        fullWidth
-                        id="websiteLink"
-                        variant="outlined"
-                        margin="dense"
-                        value={websiteLink}
-                        onChange={(e) => setWebsiteLink(e.target.value)}
-                      />
-                    </Grid>
-                    <Grid item>
-                      <InputLabel htmlFor="appLink">App Link</InputLabel>
-                      <TextField
-                        type="text"
-                        fullWidth
-                        id="appLink"
-                        variant="outlined"
-                        margin="dense"
-                        value={appLink}
-                        onChange={(e) => setAppLink(e.target.value)}
-                      />
-                    </Grid>
-                    <Grid item>
-                      <InputLabel htmlFor="oneLineSummary">
-                        One line summary (Character limit:300)
-                      </InputLabel>
-                      <TextField
-                        type="textholder"
-                        fullWidth
-                        multiline
-                        id="oneLineSummary"
-                        variant="outlined"
-                        margin="dense"
-                        rows={2}
-                        rowsMax={5}
-                        value={oneLineSummary}
-                        onChange={(e) => setOneLineSummary(e.target.value)}
-                      />
-                    </Grid>
-                    <Grid item>
-                      <InputLabel htmlFor="description">
-                        Product Description
-                      </InputLabel>
-                      <TextField
-                        type="textholder"
-                        fullWidth
-                        multiline
-                        required
-                        id="description"
-                        variant="outlined"
-                        margin="dense"
-                        rows={8}
-                        rowsMax={14}
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
-                      />
-                    </Grid>
-
-                    <Grid item>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                        className="button-block"
-                      >
-                        Review
-                      </Button>
-                    </Grid>
+                  </Box>
+                  <Grid item>
+                    <form onSubmit={handleSubmit}>
+                      <Grid container direction="column" spacing={1}>
+                        <Grid item>
+                          <InputLabel
+                            className={classes.label}
+                            htmlFor="productName"
+                          >
+                            Product Name
+                          </InputLabel>
+                          <TextField
+                            type="text"
+                            fullWidth
+                            required
+                            id="productName"
+                            variant="outlined"
+                            autoFocus
+                            margin="dense"
+                            value={values.productName}
+                            onChange={handleChange('productname')}
+                          />
+                        </Grid>
+                        <Grid item>
+                          <InputLabel className={classes.label} id="catergory">
+                            Category
+                          </InputLabel>
+                          <Select
+                            labelId="catergory"
+                            className={classes.label}
+                            id="catergory"
+                            value={values.category}
+                            fullWidth
+                            required
+                            onChange={handleChange('category')}
+                            input={<BootstrapInput />}
+                          >
+                            <MenuItem value={'EdTech'}>EdTech</MenuItem>
+                            <MenuItem value={'E-Commerce'}>E-Commerce</MenuItem>
+                            <MenuItem value={'Cabs'}>Cabs</MenuItem>
+                            <MenuItem value="Other">
+                              <em>Other</em>
+                            </MenuItem>
+                          </Select>
+                        </Grid>
+                        <Grid item>
+                          <InputLabel
+                            className={classes.label}
+                            htmlFor="websiteLink"
+                          >
+                            Website Link
+                          </InputLabel>
+                          <TextField
+                            type="text"
+                            fullWidth
+                            id="websiteLink"
+                            variant="outlined"
+                            margin="dense"
+                            value={values.websiteLink}
+                            onChange={handleChange('websiteLink')}
+                          />
+                        </Grid>
+                        <Grid item>
+                          <InputLabel
+                            className={classes.label}
+                            htmlFor="appLink"
+                          >
+                            App Link
+                          </InputLabel>
+                          <TextField
+                            type="text"
+                            fullWidth
+                            id="appLink"
+                            variant="outlined"
+                            margin="dense"
+                            value={values.appLink}
+                            onChange={handleChange('appLink')}
+                          />
+                        </Grid>
+                        <Grid item>
+                          <InputLabel
+                            className={classes.label}
+                            htmlFor="oneLineSummary"
+                          >
+                            One line summary (Character limit:300)
+                          </InputLabel>
+                          <TextField
+                            type="textholder"
+                            fullWidth
+                            multiline
+                            id="oneLineSummary"
+                            variant="outlined"
+                            margin="dense"
+                            rows={2}
+                            rowsMax={5}
+                            value={values.oneLineSummary}
+                            onChange={handleChange('oneLineSummary')}
+                          />
+                        </Grid>
+                        <Grid item>
+                          <InputLabel
+                            className={classes.label}
+                            htmlFor="description"
+                          >
+                            Product Description
+                          </InputLabel>
+                          <TextField
+                            type="textholder"
+                            fullWidth
+                            multiline
+                            required
+                            id="description"
+                            variant="outlined"
+                            margin="dense"
+                            rows={8}
+                            rowsMax={14}
+                            value={values.description}
+                            onChange={handleChange('description')}
+                          />
+                        </Grid>
+                        <Grid item>
+                          <Link
+                            to="/reviewproduct"
+                            style={{ textDecoration: 'none' }}
+                          >
+                            <Button
+                              variant="contained"
+                              color="primary"
+                              type="submit"
+                              className="button-block"
+                            >
+                              Review
+                            </Button>
+                          </Link>
+                        </Grid>
+                      </Grid>
+                    </form>
                   </Grid>
-                </form>
-              </Grid>
-            </Paper>
+                </Box>
+              </Paper>
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </ThemeProvider>
     </div>
   );
 }

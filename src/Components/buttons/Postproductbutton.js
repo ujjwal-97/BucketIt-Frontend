@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
 import theme from '../../theme';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,20 +13,18 @@ function Postproductbutton({ disablePost = true }) {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <Link
-        to="/postproduct"
-        style={{ textDecoration: 'none' }}
-        className={classes.Link}
+      <Button
+        variant="contained"
+        color="secondary"
+        type="button"
+        onClick={(e) => {
+          window.location.href = 'postproduct';
+        }}
+        className={classes.Button}
+        disabled={disablePost}
       >
-        <Button
-          variant="contained"
-          color="secondary"
-          className={classes.Button}
-          disabled={disablePost}
-        >
-          POST PRODUCT
-        </Button>
-      </Link>
+        POST PRODUCT
+      </Button>
     </ThemeProvider>
   );
 }

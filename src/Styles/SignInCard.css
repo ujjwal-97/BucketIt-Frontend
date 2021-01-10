@@ -3,6 +3,12 @@
   min-height: 90vh;
   min-width: 50vh;
 }
+.register-form {
+  justify-content: center;
+  min-height: 90vh;
+  min-width: 50vh;
+  max-width: 50vh;
+}
 .product-review {
   justify-content: left;
   min-height: 90vh;
@@ -15,7 +21,7 @@
 
 .login-background {
   justify-content: center;
-  padding: 20px 30px;
+  padding: 20px 40px;
 }
 .fixed-notification {
   max-width: 40vh;
@@ -34,5 +40,5 @@
   text-decoration: none;
 }
 .align-box {
-  width: 49.9%;
+  width: 50%;
 }

@@ -12,3 +12,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.TextField {
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 25px;
+}
