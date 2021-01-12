@@ -2,7 +2,9 @@ import { Grid, Button, Paper, Typography, Box } from '@material-ui/core';
 import '../Styles/ProductCard.css';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../theme';
-import UpvotePrimaryIcon from '../images/upvote_Primary.svg';
+import UpvotePrimaryIcon from '../images/Upvoteprimary.svg';
+import BucketPrimaryIcon from '../images/BucketPrimary.svg';
+import DownloadSecondaryIcon from '../images/DownloadSecondary.svg';
 import UpvoteIcon from '../images/Upvote.svg';
 import BucketIcon from '../images/Bucket.svg';
 import DownloadIcon from '../images/Download.svg';
@@ -52,62 +54,124 @@ function ProductCard(props) {
           <Grid item>
             <Box my={0}>
               <Grid container direction="column" justify="start">
-                <Paper
-                  variant="elevation"
-                  elevation={5}
-                  className="product-desc"
-                >
-                  <Grid item>
-                    <Grid container direction="row" justify="space-between">
-                      <Grid item>
-                        <Typography
-                          gutterBottom
-                          variant="h5"
-                          align="left"
-                          color="primary"
-                        >
-                          <strong>{props.productname}</strong>
-                        </Typography>
-                      </Grid>
-                      <Grid item>
-                        <Box pt={0.75}>
+                <Grid item>
+                  <Paper
+                    variant="elevation"
+                    elevation={5}
+                    className="product-desc"
+                  >
+                    <Grid item>
+                      <Grid container direction="row" justify="space-between">
+                        <Grid item>
                           <Typography
-                            variant="subtitle1"
-                            align="right"
-                            color="secondary"
+                            gutterBottom
+                            variant="h5"
+                            align="left"
+                            color="primary"
                           >
-                            <strong>{props.category}</strong>
+                            <strong>{props.productname}</strong>
                           </Typography>
-                        </Box>
+                        </Grid>
+                        <Grid item>
+                          <Box pt={0.75}>
+                            <Typography
+                              variant="subtitle1"
+                              align="right"
+                              color="secondary"
+                            >
+                              <strong>{props.category}</strong>
+                            </Typography>
+                          </Box>
+                        </Grid>
                       </Grid>
+                      <Box my={1}>
+                        <Grid item>
+                          <Typography variant="subtitle2" align="left">
+                            <strong>{props.oneline}</strong>
+                          </Typography>
+                        </Grid>
+                      </Box>
+                      <Box my={1}>
+                        <Grid item>
+                          <Typography
+                            color="textPrimary"
+                            variant="subtitle2"
+                            align="left"
+                          >
+                            {props.description}
+                          </Typography>
+                        </Grid>
+                      </Box>
                     </Grid>
-                    <Box my={1}>
-                      <Grid item>
-                        <Typography variant="subtitle2" align="left">
-                          <strong>{props.oneline}</strong>
-                        </Typography>
-                      </Grid>
-                    </Box>
-                    <Box my={1}>
-                      <Grid item>
-                        <Typography
-                          color="textPrimary"
-                          variant="subtitle2"
-                          align="left"
+                  </Paper>
+                </Grid>
+                <Grid item>
+                  <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    spacing={10}
+                    alignItems="center"
+                  >
+                    <Grid item>
+                      <Paper
+                        style={{
+                          color: '#8693AE',
+                          backgroundColor: '#F0F6FF',
+                          padding: '12px',
+                        }}
+                      >
+                        <Button
+                          style={{
+                            backgroundColor: '#DBE9FE',
+                          }}
                         >
-                          {props.description}
+                          <Typography color="primary">
+                            Bucket It&nbsp;
+                            <img src={BucketPrimaryIcon} alt="Bucket icon" />
+                          </Typography>
+                        </Button>
+                        <Typography style={{ fontSize: '10px' }}>
+                          Liked the product ? Appreciate the creator
+                          <br />
+                          by savind it in your bucket
                         </Typography>
-                      </Grid>
-                    </Box>
+                      </Paper>
+                    </Grid>
+                    <Grid item>
+                      <Paper
+                        style={{
+                          color: '#8693AE',
+                          backgroundColor: '#F0F6FF',
+                          padding: '12px',
+                        }}
+                      >
+                        <Button style={{ backgroundColor: '#F3E5D8' }}>
+                          <Typography color="secondary">
+                            Get It &nbsp;
+                            <img
+                              src={DownloadSecondaryIcon}
+                              alt="Download icon"
+                            />
+                          </Typography>
+                        </Button>
+                        <Typography
+                          color="primary"
+                          style={{ fontSize: '10px' }}
+                        >
+                          #5 trending product of the week
+                        </Typography>
+                      </Paper>
+                    </Grid>
                   </Grid>
-                </Paper>
+                </Grid>
               </Grid>
             </Box>
           </Grid>
           <Grid item>
             <Paper
               style={{
-                color: '#c1c7d2',
+                color: '#8693AE',
                 backgroundColor: '#F0F6FF',
                 padding: '8px',
               }}
