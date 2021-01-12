@@ -3,6 +3,10 @@
   min-height: 90vh;
   min-width: 50vh;
 }
+.product-form {
+  justify-content: center;
+  width: 464px;
+}
 .register-form {
   justify-content: center;
   min-height: 90vh;

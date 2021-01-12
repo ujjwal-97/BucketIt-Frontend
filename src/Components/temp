@@ -1,0 +1,22 @@
+<Paper variant="elevation" elevation={0} className="quantity-card">
+          <div>
+            <img src={UpvoteIcon} alt="upvote icon" />
+            &nbsp;{props.quantity}
+          </div>
+          <div>
+            <img src={BucketIcon} alt="bucket icon" />
+            &nbsp;{props.quantity}
+          </div>
+          <div>
+            <img src={DownloadIcon} alt="download icon" />
+            &nbsp;{props.quantity}
+          </div>
+        </Paper>
+
+
+
+
+        <Button variant="contained" color="primary" className="upvote-button">
+          Upvote&nbsp;
+          <img src={UpvotePrimaryIcon} alt="upvote icon" />
+        </Button>

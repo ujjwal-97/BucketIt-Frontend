@@ -7,6 +7,7 @@ import SignInPage from './Pages/SignInPage';
 import CreateProfilePage from './Pages/CreateProfilePage';
 import PostProductPage from './Pages/PostProductPage';
 import ReviewProductPage from './Pages/ReviewProductPage';
+import ProductPage from './Pages/ProductPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/createprofile" exact component={CreateProfilePage} />
           <Route path="/postproduct" exact component={PostProductPage} />
           <Route path="/reviewproduct" exact component={ReviewProductPage} />
+          <Route path="/product" exact component={ProductPage} />
         </Switch>
       </ThemeProvider>
     </BrowserRouter>

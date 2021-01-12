@@ -59,6 +59,7 @@ function PostProductCard() {
     appLink: '',
     oneLineSummary: '',
     description: '',
+    uploadLogo: '',
   });
 
   const handleChange = (prop) => (e) => {
@@ -82,7 +83,7 @@ function PostProductCard() {
               container
               direction="column"
               justify="center"
-              className="login-form"
+              className="product-form"
             >
               <Box my={4}>
                 <Typography variant="h5">
@@ -199,6 +200,25 @@ function PostProductCard() {
                             value={values.oneLineSummary}
                             onChange={handleChange('oneLineSummary')}
                           />
+                        </Grid>
+                        <Grid item align="center">
+                          <input
+                            accept="image/*"
+                            style={{ display: 'none' }}
+                            id="uploadLogo"
+                            multiple
+                            type="file"
+                          />
+                          <label htmlFor="uploadLogo">
+                            <Button
+                              variant="contained"
+                              color="primary"
+                              component="span"
+                              className={classes.button}
+                            >
+                              Upload Logo
+                            </Button>
+                          </label>{' '}
                         </Grid>
                         <Grid item>
                           <InputLabel
