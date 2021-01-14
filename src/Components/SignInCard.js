@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {
   Button,
   TextField,
@@ -24,8 +25,14 @@ function SignInCard() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let body = JSON.stringify({ values });
-    console.log(body);
+    axios
+      .post('https://jsonplaceholder.typicode.com/posts', values)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleChange = (prop) => (e) => {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {
   Button,
   TextField,
@@ -18,10 +19,14 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 function RegisterCard() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    let body = JSON.stringify({
-      values,
-    });
-    console.log(body);
+    axios
+      .post('https://jsonplaceholder.typicode.com/posts', values)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   const [values, setValues] = useState({
     firstname: '',

@@ -18,8 +18,6 @@ import BucketIcon from '../images/Bucket.svg';
 import DownloadIcon from '../images/Download.svg';
 import Avatar from '@material-ui/core/Avatar';
 
-//import { Link } from 'react-router-dom';
-
 function ProductCard(props) {
   const [comment, setComment] = useState('');
   const handleSubmit = (e) => {
