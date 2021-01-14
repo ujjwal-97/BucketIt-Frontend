@@ -135,7 +135,7 @@ function ReviewProductCard(props) {
                           <Button
                             variant="outlined"
                             color="primary"
-                            onSubmit={handleSubmit}
+                            onClick={handleSubmit}
                             className="button-block"
                           >
                             POST PRODUCT
