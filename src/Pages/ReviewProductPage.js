@@ -23,22 +23,30 @@ const theme = createMuiTheme({
 
 function ReviewProductPage(props) {
   const classes = useStyles();
-
+  const {
+    productName,
+    category,
+    websiteLink,
+    appLink,
+    oneLineSummary,
+    description,
+    uploadLogo,
+  } = (props.location && props.location.values) || {};
   return (
     <>
       <Navbar register={true} disablePost={true} />
       <ThemeProvider theme={theme}>
         <div className={classes.root}></div>
       </ThemeProvider>
+
       <ReviewProductCard
-        productname={"BYJU'S"}
-        category={'FINTECH'}
-        oneline={'Indian education technology and education firm'}
-        description={
-          ' The Learning App is an Indian educational technology (edtech) and online tutoring firm founded in 2011 by Byju Raveendran. The company with a valuation of $11.1 billion.'
-        }
-        website={'www.byjus.com'}
-        applink={'www.byjus.com/applink'}
+        productname={productName}
+        category={category}
+        oneline={oneLineSummary}
+        description={description}
+        website={websiteLink}
+        applink={appLink}
+        uploadLogo={uploadLogo}
       />
     </>
   );

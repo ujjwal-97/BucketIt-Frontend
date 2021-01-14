@@ -69,7 +69,10 @@ const PostProductCard = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push('/reviewproduct', values);
+    history.push({
+      pathname: '/reviewproduct',
+      values,
+    });
     let body = JSON.stringify({
       values,
     });

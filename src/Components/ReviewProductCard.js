@@ -4,13 +4,26 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import theme from '../theme';
 import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 function ReviewProductCard(props) {
   const history = useHistory();
 
   const handleEdit = (e) => {
-    history.push('/postproduct');
+    history.goBack();
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post('https://jsonplaceholder.typicode.com/posts', props)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div>
       <ThemeProvider theme={theme}>
@@ -122,7 +135,7 @@ function ReviewProductCard(props) {
                           <Button
                             variant="outlined"
                             color="primary"
-                            type="submit"
+                            onSubmit={handleSubmit}
                             className="button-block"
                           >
                             POST PRODUCT
