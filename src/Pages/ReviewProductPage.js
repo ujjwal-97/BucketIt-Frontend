@@ -5,7 +5,6 @@ import {
   createMuiTheme,
   ThemeProvider,
 } from '@material-ui/core/styles';
-//import Typography from '@material-ui/core/Typography';
 import ReviewProductCard from '../Components/ReviewProductCard';
 
 const useStyles = makeStyles({

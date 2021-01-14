@@ -3,9 +3,14 @@ import '../Styles/SignInCard.css';
 import { ThemeProvider } from '@material-ui/core/styles';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import theme from '../theme';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function ReviewProductCard(props) {
+  const history = useHistory();
+
+  const handleEdit = (e) => {
+    history.push('/postproduct');
+  };
   return (
     <div>
       <ThemeProvider theme={theme}>
@@ -128,6 +133,7 @@ function ReviewProductCard(props) {
                             className="button-block"
                             variant="contained"
                             color="primary"
+                            onClick={handleEdit}
                           >
                             EDIT
                           </Button>

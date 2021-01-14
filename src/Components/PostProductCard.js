@@ -17,8 +17,8 @@ import {
   withStyles,
 } from '@material-ui/core/styles';
 import theme from '../theme';
+import { useHistory } from 'react-router-dom';
 import '../Styles/SignInCard.css';
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   label: {
@@ -49,7 +49,8 @@ const BootstrapInput = withStyles((theme) => ({
   },
 }))(InputBase);
 
-function PostProductCard() {
+const PostProductCard = (props) => {
+  const history = useHistory();
   const classes = useStyles();
 
   const [values, setValues] = useState({
@@ -68,6 +69,7 @@ function PostProductCard() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    history.push('/reviewproduct', values);
     let body = JSON.stringify({
       values,
     });
@@ -116,6 +118,7 @@ function PostProductCard() {
                           <TextField
                             type="text"
                             fullWidth
+                            size="small"
                             required
                             id="productName"
                             variant="outlined"
@@ -242,19 +245,14 @@ function PostProductCard() {
                           />
                         </Grid>
                         <Grid item>
-                          <Link
-                            to="/reviewproduct"
-                            style={{ textDecoration: 'none' }}
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            type="submit"
+                            className="button-block"
                           >
-                            <Button
-                              variant="contained"
-                              color="primary"
-                              type="submit"
-                              className="button-block"
-                            >
-                              Review
-                            </Button>
-                          </Link>
+                            Review
+                          </Button>
                         </Grid>
                       </Grid>
                     </form>
@@ -267,5 +265,5 @@ function PostProductCard() {
       </ThemeProvider>
     </div>
   );
-}
+};
 export default PostProductCard;
