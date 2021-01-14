@@ -122,7 +122,7 @@ function PostProductCard() {
                             autoFocus
                             margin="dense"
                             value={values.productName}
-                            onChange={handleChange('productname')}
+                            onChange={handleChange('productName')}
                           />
                         </Grid>
                         <Grid item>
