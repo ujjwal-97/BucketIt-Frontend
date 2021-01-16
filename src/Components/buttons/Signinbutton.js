@@ -17,7 +17,11 @@ function Signinbutton() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <Link to="/" style={{ textDecoration: 'none' }} className={classes.Link}>
+      <Link
+        to="/signin"
+        style={{ textDecoration: 'none' }}
+        className={classes.Link}
+      >
         <Button color="inherit" className={classes.Button}>
           SIGN IN
         </Button>

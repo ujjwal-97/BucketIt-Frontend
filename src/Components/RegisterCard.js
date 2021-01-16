@@ -235,7 +235,7 @@ function RegisterCard() {
                       Already registered?&nbsp;
                       <Link
                         style={{ textDecoration: 'none', color: '#1574F6' }}
-                        to="/"
+                        to="/signin"
                       >
                         <strong>Sign In</strong>
                       </Link>

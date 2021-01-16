@@ -16,14 +16,14 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <Switch>
-          <Route path="/" exact component={SignInPage} />
+          <Route path="/signin" exact component={SignInPage} />
           <Route path="/register" exact component={RegisterPage} />
           <Route path="/createprofile" exact component={CreateProfilePage} />
           <Route path="/postproduct" exact component={PostProductPage} />
           <Route path="/reviewproduct" exact component={ReviewProductPage} />
           <Route path="/product" exact component={ProductPage} />
           <Route path="/admin" exact component={AdminPage} />
-          <Route path="/home" exact component={HomePage} />
+          <Route path="/" exact component={HomePage} />
         </Switch>
       </ThemeProvider>
     </BrowserRouter>

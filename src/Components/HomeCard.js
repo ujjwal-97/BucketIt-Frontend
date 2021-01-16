@@ -34,11 +34,7 @@ function HomeCard() {
       dataLength={state.posts.length}
       next={fetchData}
       hasMore={true}
-      loader={
-        <div>
-          <loading className=""></loading>
-        </div>
-      }
+      loader={<div>loading ...</div>}
     >
       <Grid item>
         {posts.map((product, index) => (
