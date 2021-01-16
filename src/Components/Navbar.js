@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
-import HomeIcon from '@material-ui/icons/Home';
+import BucketIcon from '../images/Bucket.svg';
 import { Link } from 'react-router-dom';
 import RegisterButton from './buttons/Registerbutton';
 import Signinbutton from './buttons/Signinbutton';
@@ -45,7 +45,7 @@ function Navbar({
                 color="primary"
                 aria-label="menu"
               >
-                <HomeIcon />
+                <img src={BucketIcon} alt="bucket icon" />
               </IconButton>
             </Link>
 

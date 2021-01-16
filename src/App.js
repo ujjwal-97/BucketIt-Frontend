@@ -9,6 +9,7 @@ import PostProductPage from './Pages/PostProductPage';
 import ReviewProductPage from './Pages/ReviewProductPage';
 import ProductPage from './Pages/ProductPage';
 import AdminPage from './Pages/AdminPage';
+import HomePage from './Pages/HomePage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/reviewproduct" exact component={ReviewProductPage} />
           <Route path="/product" exact component={ProductPage} />
           <Route path="/admin" exact component={AdminPage} />
+          <Route path="/home" exact component={HomePage} />
         </Switch>
       </ThemeProvider>
     </BrowserRouter>
