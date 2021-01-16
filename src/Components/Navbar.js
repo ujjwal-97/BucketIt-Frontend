@@ -8,6 +8,8 @@ import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';
 import RegisterButton from './buttons/Registerbutton';
 import Signinbutton from './buttons/Signinbutton';
+import Adminbutton from './buttons/Adminbutton';
+import Logoutbutton from './buttons/Logoutbutton';
 import Postproductbutton from './buttons/Postproductbutton';
 import theme from '../theme';
 
@@ -21,7 +23,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Navbar({ signin = false, register = false, disablePost = false }) {
+function Navbar({
+  signin = false,
+  register = false,
+  disablePost = false,
+  post = true,
+  admin = false,
+  logout = false,
+}) {
   const classes = useStyles();
 
   return (
@@ -47,9 +56,11 @@ function Navbar({ signin = false, register = false, disablePost = false }) {
               m={1}
               p={1}
             >
-              <Postproductbutton disablePost={disablePost} />
+              {post && <Postproductbutton disablePost={disablePost} />}
+              {admin && <Adminbutton />}
               {register && <RegisterButton />}
               {signin && <Signinbutton />}
+              {logout && <Logoutbutton />}
             </Box>
           </Toolbar>
         </AppBar>

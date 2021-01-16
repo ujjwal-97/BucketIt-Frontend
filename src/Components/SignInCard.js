@@ -28,6 +28,7 @@ function SignInCard() {
     axios
       .post('https://jsonplaceholder.typicode.com/posts', values)
       .then((res) => {
+        localStorage.setItem(res.)
         console.log(res);
       })
       .catch((err) => {

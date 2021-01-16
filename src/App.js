@@ -8,6 +8,7 @@ import CreateProfilePage from './Pages/CreateProfilePage';
 import PostProductPage from './Pages/PostProductPage';
 import ReviewProductPage from './Pages/ReviewProductPage';
 import ProductPage from './Pages/ProductPage';
+import AdminPage from './Pages/AdminPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/postproduct" exact component={PostProductPage} />
           <Route path="/reviewproduct" exact component={ReviewProductPage} />
           <Route path="/product" exact component={ProductPage} />
+          <Route path="/admin" exact component={AdminPage} />
         </Switch>
       </ThemeProvider>
     </BrowserRouter>
