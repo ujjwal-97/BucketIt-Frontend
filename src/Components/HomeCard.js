@@ -13,7 +13,7 @@ function HomeCard() {
     console.log('hello');
     setState({ ...state, limit: state.limit + 10 });
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts/?_limit=${state.limit}`)
+      .get(`https://jsonplaceholder.typicode.com/photos/?_limit=${state.limit}`)
       .then((data) => {
         setState({ ...state, posts: state.posts.concat(data.data) });
         console.log('fetched data', data.data);
@@ -21,7 +21,7 @@ function HomeCard() {
   };
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts/?_limit=${state.limit}`)
+      .get(`https://jsonplaceholder.typicode.com/photos/?_limit=${state.limit}`)
       .then((data) => {
         setState({ ...state, posts: data.data });
         console.log('initialData', data.data);

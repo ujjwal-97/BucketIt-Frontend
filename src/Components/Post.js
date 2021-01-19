@@ -16,7 +16,7 @@ export default function Post({ product }) {
             variant="elevation"
             elevation={3}
             style={{
-              width: '800px',
+              width: '700px',
               marginInline: '8px',
               padding: '10px 10px',
             }}
@@ -34,13 +34,13 @@ export default function Post({ product }) {
               </Grid>
               <Grid item style={{ margin: '15px 2px 10px' }}>
                 <img
-                  src={UpvoteIcon}
+                  src={product.thumbnailUrl}
                   alt="product"
                   width="90px"
                   height="90px"
                 />
               </Grid>
-              <Grid item style={{ marginLeft: '10px' }}>
+              <Grid item style={{ marginLeft: '10px', flexGrow: 1 }}>
                 <Grid container direction="row" justify="space-between">
                   <Grid item>
                     <Typography
@@ -67,7 +67,8 @@ export default function Post({ product }) {
                 <Box>
                   <Grid item>
                     <Typography color="textPrimary" variant="subtitle2">
-                      {product.body}
+                      {product.title}
+                      This is the description part of the post.
                     </Typography>
                   </Grid>
                 </Box>
