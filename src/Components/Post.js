@@ -59,7 +59,7 @@ export default function Post({ product }) {
                         align="right"
                         color="secondary"
                       >
-                        <strong>{product.id}</strong>
+                        <strong>Category</strong>
                       </Typography>
                     </Box>
                   </Grid>
