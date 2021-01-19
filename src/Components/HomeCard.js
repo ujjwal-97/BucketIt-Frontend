@@ -5,7 +5,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 import Post from './Post';
 function HomeCard() {
-  const [state, setState] = useState({ posts: [], limit: 20 });
+  const [state, setState] = useState({ posts: [], limit: 50 });
   const { posts } = state;
   console.log('limit', state.limit);
 

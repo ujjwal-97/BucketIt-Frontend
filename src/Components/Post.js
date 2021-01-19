@@ -22,7 +22,7 @@ export default function Post({ product }) {
             }}
           >
             <Box display="flex" direction="row" justify="flex-start">
-              <Grid item style={{ margin: '40px 10px 10px' }}>
+              <Grid item style={{ margin: '30px 10px 10px' }}>
                 <div>
                   <IconButton edge="start" color="primary" aria-label="menu">
                     <img src={UpvoteIcon} alt="bucket icon" />
@@ -32,8 +32,13 @@ export default function Post({ product }) {
                   {product.id}
                 </div>
               </Grid>
-              <Grid item style={{ margin: '10px 2px 10px' }}>
-                <img src="" alt="product" width="90px" height="90px" />
+              <Grid item style={{ margin: '15px 2px 10px' }}>
+                <img
+                  src={UpvoteIcon}
+                  alt="product"
+                  width="90px"
+                  height="90px"
+                />
               </Grid>
               <Grid item style={{ marginLeft: '10px' }}>
                 <Grid container direction="row" justify="space-between">

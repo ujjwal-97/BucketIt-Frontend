@@ -1,7 +1,7 @@
 .login-form {
   justify-content: center;
-  min-height: 90vh;
-  min-width: 50vh;
+  min-height: 900px;
+  min-width: 500px;
 }
 .product-form {
   justify-content: center;
@@ -9,15 +9,15 @@
 }
 .register-form {
   justify-content: center;
-  min-height: 90vh;
-  min-width: 50vh;
-  max-width: 50vh;
+  min-height: 900px;
+  min-width: 500px;
+  max-width: 500px;
 }
 .product-review {
   justify-content: left;
-  min-height: 90vh;
-  min-width: 50vh;
-  max-width: 50vh;
+  min-height: 900px;
+  min-width: 500px;
+  max-width: 500px;
 }
 .button-block {
   width: 100%;
