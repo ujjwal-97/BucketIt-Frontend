@@ -6,6 +6,12 @@ const theme = createMuiTheme({
       colorPrimary: { backgroundColor: '#1574F6' },
       colorSecondary: { backgroundColor: '#F9A23B' },
     },
+    MuiToggleButtonGroup: {
+      root: {
+        backgroundColor: '#fff',
+      },
+    },
+
     MuiTypography: {
       colorPrimary: { color: '#1574F6' },
       colorSecondary: { color: '#F9A23B' },

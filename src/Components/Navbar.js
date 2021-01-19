@@ -11,6 +11,7 @@ import Signinbutton from './buttons/Signinbutton';
 import Adminbutton from './buttons/Adminbutton';
 import Logoutbutton from './buttons/Logoutbutton';
 import Postproductbutton from './buttons/Postproductbutton';
+import Avatarbutton from './buttons/Avatarbutton';
 import theme from '../theme';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,6 +31,7 @@ function Navbar({
   post = true,
   admin = false,
   logout = false,
+  loggedin = false,
 }) {
   const classes = useStyles();
 
@@ -58,9 +60,10 @@ function Navbar({
             >
               {post && <Postproductbutton disablePost={disablePost} />}
               {admin && <Adminbutton />}
-              {register && <RegisterButton />}
-              {signin && <Signinbutton />}
+              {!loggedin && register && <RegisterButton />}
+              {!loggedin && signin && <Signinbutton />}
               {logout && <Logoutbutton />}
+              {loggedin && <Avatarbutton />}
             </Box>
           </Toolbar>
         </AppBar>

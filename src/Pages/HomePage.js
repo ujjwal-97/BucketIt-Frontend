@@ -6,7 +6,7 @@ import { Grid } from '@material-ui/core';
 function HomePage() {
   return (
     <>
-      <Navbar register={true} disablePost={false} />
+      <Navbar register={true} disablePost={false} loggedin={true} />
       <Grid container direction="row" justify="center">
         <Grid item>
           <HomeCard />
